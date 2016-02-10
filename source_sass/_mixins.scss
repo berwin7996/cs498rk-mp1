@@ -1,0 +1,18 @@
+// http://www.sitepoint.com/sass-basics-the-mixin-directive/
+/* use this for showing which section currently in
+** and to allow smooth scrolling to certain sections 	
+*/
+@mixin button ($link, $visit, $hover, $active) {
+  .header-button {
+    // color: $link;
+    &:visited {
+      background-color: $visit;
+    }
+    &:hover {
+      background-color: $hover;   
+    }
+    &:active {
+      background-color: $active;
+    }
+  }
+}

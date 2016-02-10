@@ -2,19 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MP1 Starter</title>
+  <title>MP1</title>
   <link rel="stylesheet" href="css/styles.css">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
-<body>
-  <h1>Hello World!</h1>
-  <div class="test"> My name is Anthony.</div>
-  <div class="cat">
-    <img src="./media/cat.jpg" alt="Cat">
-  </div>
+<div class="header-container">
+  <a href="#section-one-anchor" id="section-one-button" class="header-button">Home</a>
+  <a href="#section-two-anchor" id="section-two-button" class="header-button">Bears</a>
+  <a href="#section-three-anchor" id="section-three-button" class="header-button">Fun</a>
+</div>
 
-  <script src="lib/jquery-2.1.3.min/index.js"></script>
-  <script src="js/script.js"></script>
-  <script src="http://localhost:35729/livereload.js"></script>
-</body>
-</html>
+<body>
+  <section id="section-one">
+    <a name="section-one-anchor" id="section-one-anchor"></a>
+    <video autoplay loop>
+      <source src="media/bear_video.mp4" type="video/mp4">
+        Your browser does not support the <code>video</code> element.
+      </video>
+    </section>
+
+    <section id="section-two">
+      <a name="section-two-anchor" id="section-two-anchor"></a>
+      <div class="parallax-layer parallax-layer-back">
+        <img src="media/bear.jpg" class="backgroundimg">
+      </div>
+      <div class="parallax-layer parallax-layer-base">
+        <h1>The kinds of bears in the world!</h1>
+        <div class="flex-container">
+          <div class="flex-item">
+            <h1>Ice Bear</h1>
+            <img src="media/types-of-bears/ice.gif">
+          </div>
+          <div class="flex-item">
+            <h1>Panda</h1>
+            <img src="media/types-of-bears/panda.gif">
+          </div>
+          <div class="flex-item">
+            <h1>Grizz</h1>
+            <img src="media/types-of-bears/grizzly.gif">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-three">
+      <a name="section-three-anchor" id="section-three-anchor"></a>
+
+      hi
+    </section>
+
+    <script src="lib/jquery-2.1.3.min/index.js"></script>
+    <script src="js/script.js"></script>
+    <script src="http://localhost:35729/livereload.js"></script>
+  </body>
+  </html>

@@ -1,13 +1,158 @@
-@import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather');
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Roboto);
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
+@include button($link, $visit, $hover, $active); 
+
+
+
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: $primary-color-light;
+}
 
 h1 {
+  // this padding avoids the h1 being hidden behind the top bar
+  padding-top: $header-height;
   font-size: 2.2rem;
-  color: lighten($orange, 25);
+  color: lighten($primary-color-text, 25);
+
 }
 
-.test {
-  font-size: 1.2rem;
-  color: $blue;
+section {
+  // height is the size of the viewport
+  height: 100vh;
+  // background-image: $header-img;
+
+  perspective: 1px;
+
+  // http://elijahmanor.com/dynamic-repeating-sass-colors/
+  // changing section color dynamically
+  // For later, just use a loop with the lighten() function
+  @for $i from 1 through $section-colors-length {
+    &:nth-of-type(#{$section-colors-length}n+#{$i}) {
+      background-color: nth($section-colors, $i);      
+    }
+  } 
+
+  // columns
+
 }
+
+/*
+* parallax layer used for background thingy
+*/
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.parallax-layer-base {
+  transform: translateZ(1);
+}
+.parallax-layer-back {
+  transform: translateZ(-5px) scale(1);
+  z-index: -999;
+}
+
+#section-two {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+
+
+/*
+*  flexbox for columns
+*/
+
+.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  text-align: center;
+
+  flex: 0 1 auto;
+  margin: 0 auto;
+
+  max-width: 30vh;
+  overflow: hidden;
+  
+  img {
+    // width: auto;
+    height: 25vh;
+  }
+}
+
+
+
+.header-container {
+  position: fixed;
+  top: 0;
+  background-color: darken($header-color, 10);
+  width: 100%;
+  z-index: 2000;
+  height: $header-height;
+
+  &.minimized {
+    height: $header-height-mini;
+  }
+  
+  .header-button {
+
+    &.minimized{
+      line-height: $header-height-mini;
+    }
+
+      // highlight the button when we are in that viewport
+      &.active {
+        background-color: darken($hover, 25);
+      }
+      margin: 0;
+      height: 100%;
+      width: 100px;
+
+      // vertical alignment
+      line-height: $header-height;
+
+      // horizontal alignment
+      text-align: center;
+
+      // get rid of underline
+      text-decoration: none;
+
+      // allow block (lets me change dimensions of span)
+      display: inline-block;
+      overflow: auto;
+
+
+      // sexy-ass animation
+      -webkit-transition: line-height 0.8s;
+      -moz-transition: line-height 0.8s;
+      transition: line-height 0.8s;
+
+
+    }
+
+    -webkit-transition: height 0.8s;
+    -moz-transition: height 0.8s;
+    transition: height 0.8s;
+  }
+
+  video {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    transform: translateX(-50%) translateY(-50%);
+  }
