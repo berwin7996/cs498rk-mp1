@@ -5,17 +5,18 @@ $grey			: #AAAAAA;
 $primary-color-dark		: #1976D2;
 $primary-color			: #2196F3;
 $primary-color-light	: #BBDEFB;
-$primary-color-text		: #FFFFFF;
+$white    : #FFFFFF;
+$black    : #000000;
 $accent-color			: #607D8B;
 $primary-text-color		: #212121;
-$secondary-text-color	: #727272;
+$secondary-text-color	: #000000;
 $divider-color			: #B6B6B6;
 
 $header-color   : #FFFFFF;
 $header-height  : 60px;
 $header-height-mini  : 30px;
 
-$section-colors   : $primary-color-dark, $primary-color, $primary-color-light;
+$section-colors   : $primary-color-light, $primary-color-dark, $primary-color;
 $section-colors-length: length($section-colors);
 
 $link	: #1976D2;
@@ -28,7 +29,9 @@ $active	: #607D8B;
 // $header-img: image-url('/media/bear.jpg', false, false);
 
 
-$font-secondary: Open, sans-serif, $primary-text-color;
-$font-primary: Roboto, sans-serif;
+$font-secondary: 'Open', sans-serif, $primary-text-color;
+$font-primary: 'Roboto', sans-serif;
+
+$font-title: 'Gorditas', cursive;
 
 $default-border-radius : 10px;

@@ -16,3 +16,15 @@
     }
   }
 }
+
+@mixin h-center () {
+  padding-top: $header-height;
+  font-family: $font-title;
+  color: lighten($white, 25);
+  text-align: center;
+}
+
+@mixin horizontalcenter () {
+  left: 50%;
+  transform: translateX(-50%);
+}

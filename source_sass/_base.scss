@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans|Roboto);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Roboto|Gorditas);
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
 @include button($link, $visit, $hover, $active); 
@@ -16,11 +16,13 @@ body {
 }
 
 h1 {
-  // this padding avoids the h1 being hidden behind the top bar
-  padding-top: $header-height;
+  @include h-center();
   font-size: 2.2rem;
-  color: lighten($primary-color-text, 25);
+}
 
+h2 {
+  @include h-center();
+  font-size: 1.6rem;
 }
 
 section {
@@ -39,34 +41,58 @@ section {
     }
   } 
 
-  // columns
+  .bear-description {
+    margin-top: 5%;
+    color: lighten($white, 25);
+  }
 
-}
+  .profile-pic {
+    margin-top: 5%;
+    border-radius: 20%;
+    box-shadow: 5px 5px 5px;
+  }
 
-/*
-* parallax layer used for background thingy
-*/
-.parallax-layer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.parallax-layer-base {
-  transform: translateZ(1);
-}
-.parallax-layer-back {
-  transform: translateZ(-5px) scale(1);
-  z-index: -999;
+  .wbb-logo {
+
+    // put over video
+    position: absolute;
+
+    // center vertically
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 50vh;
+    z-index: 5000;
+  }
+
+  .modal-button {
+    color: $black;
+    opacity: 0.8;
+    margin: 0 auto;
+    width: 30vh;
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px;
+    padding: 5px;
+
+    &:hover {
+      background-color: $hover;  
+    box-shadow: 5px 5px 5px $primary-color-dark; 
+    }
+  }
+
 }
 
 #section-two {
   perspective: 1px;
-  height: 100vh;
+  // height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
 
+  background-size: cover;
+  background-image: url("/media/bear.jpg");
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
 }
 
 
@@ -85,8 +111,8 @@ section {
   margin: 0 auto;
 
   max-width: 30vh;
-  overflow: hidden;
-  
+  // overflow: hidden;
+
   img {
     // width: auto;
     height: 25vh;
@@ -102,6 +128,7 @@ section {
   width: 100%;
   z-index: 2000;
   height: $header-height;
+  opacity: 0.8;
 
   &.minimized {
     height: $header-height-mini;
@@ -113,32 +140,36 @@ section {
       line-height: $header-height-mini;
     }
 
-      // highlight the button when we are in that viewport
-      &.active {
-        background-color: darken($hover, 25);
-      }
-      margin: 0;
-      height: 100%;
-      width: 100px;
+    // highlight the button when we are in that viewport
+    &.active {
+      background-color: darken($hover, 25);
+    }
+    top: 0;
+    margin: 0;
+    height: 100%;
+    width: 100px;
 
-      // vertical alignment
-      line-height: $header-height;
+    font-family: $font-title;
+    color: $secondary-text-color;
 
-      // horizontal alignment
-      text-align: center;
+    // vertical alignment
+    line-height: $header-height;
 
-      // get rid of underline
-      text-decoration: none;
+    // horizontal alignment
+    text-align: center;
 
-      // allow block (lets me change dimensions of span)
-      display: inline-block;
-      overflow: auto;
+    // get rid of underline
+    text-decoration: none;
+
+    // allow block (lets me change dimensions of span)
+    display: inline-block;
+    overflow: auto;
 
 
-      // sexy-ass animation
-      -webkit-transition: line-height 0.8s;
-      -moz-transition: line-height 0.8s;
-      transition: line-height 0.8s;
+    // sexy-ass animation
+    -webkit-transition: line-height 0.8s;
+    -moz-transition: line-height 0.8s;
+    transition: line-height 0.8s;
 
 
     }
@@ -153,6 +184,18 @@ section {
     top: 50%;
     left: 50%;
     width: auto;
-    height: 100%;
+    height: 120%;
     transform: translateX(-50%) translateY(-50%);
+    z-index: 5;
   }
+
+
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  
+  border-top: 20px solid #f00;
+}
