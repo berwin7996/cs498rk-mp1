@@ -45,6 +45,15 @@
   transition: height 0.8s;
 }
 
+@mixin transitionhover() {
+  transition: box-shadow .25s ease-in-out;
+   -moz-transition: box-shadow .25s ease-in-out;
+   -webkit-transition: box-shadow .25s ease-in-out;
+  transition: background-color .25s ease-in-out;
+   -moz-transition: background-color .25s ease-in-out;
+   -webkit-transition: background-color .25s ease-in-out;
+}
+
 @mixin ignoreAnchorColors() {
   a {
     &:link {

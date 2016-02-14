@@ -76,8 +76,9 @@ section {
   }
 
   .modal-button {
+    @include transitionhover();
     color: $black;
-    opacity: 0.8;
+    opacity: 0.9;
     margin: 0 auto;
     width: 30vh;
     background-color: $white;
@@ -86,6 +87,7 @@ section {
     padding: 5px;
 
     &:hover {
+      // opacity: 0.5;
       background-color: $hover;  
       box-shadow: 5px 5px 5px $primary-color-dark; 
     }
@@ -117,11 +119,12 @@ section {
   }
 
   .slides {
+  @include transition();
     // width: 80vh;
     overflow-y: hidden;
     .hideable {
       // @include horizontalcenter-margin();
-      @include transition();
+      // @include transitionhover();
       opacity: 1;
       // transition: opacity 1s, height 0;
 
@@ -287,7 +290,6 @@ video {
 /* http://www.w3schools.com/howto/howto_css_modals.asp */
 /* The Modal (background) */
 .modal {
-  @include transition();
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   left: 0;
@@ -303,7 +305,6 @@ video {
 
 /* Modal Content/Box */
 .modal-content {
-  @include transition();
   background-color: #fefefe;
   border-radius: 20px;
   margin: 15% auto; /* 15% from the top and centered */
