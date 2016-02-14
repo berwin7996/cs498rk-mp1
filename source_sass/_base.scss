@@ -93,7 +93,8 @@ section {
 
   .arrow-container{
     // @include verticalcenter();
-    margin: 50% auto;
+    margin: 40vh auto;
+    transform: translateY(-80%);
     display: block;
     color: white;
     cursor: pointer;
