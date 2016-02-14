@@ -91,8 +91,15 @@ section {
     }
   }
 
-
+  .arrow-container{
+    // @include verticalcenter();
+    margin: 50% auto;
+    display: block;
+    color: white;
+    cursor: pointer;
+  }
   .arrow {
+  
     font-size: 3em;
     margin-left: 20px;
     margin-right: 20px;
@@ -173,7 +180,7 @@ section {
 }
 
 .flex-item {
-  @include verticalcenter();
+  // @include verticalcenter();
 
   text-align: center;
   
@@ -196,8 +203,8 @@ section {
   flex: 0 1 auto;
   margin: 0 auto;
   overflow-x: hidden;
-
-  max-width: 80vh;
+  overflow-y: hidden;
+  max-width: 70%;
 }
 
 

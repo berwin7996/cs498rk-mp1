@@ -44,7 +44,7 @@ $(document).on( 'scroll', function(){
   var sectionThreeVisible = isElInViewport(document.getElementById('section-three'));
   var sectionFourVisible = isElInViewport(document.getElementById('section-four'));
 
-  console.log(currentSection);
+  // console.log(currentSection);
 
   if(sectionOneVisible){
     currentSection = 1;
@@ -152,5 +152,5 @@ function toggleSlide(direction) {
   
 
 
-  console.log(curslide);
+  // console.log(curslide);
 }
