@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="shortcut icon" href="/media/favicon.ico" type="image/x-icon" />
   <meta charset="UTF-8">
   <title>MP1</title>
   <link rel="stylesheet" href="css/styles.css">
@@ -10,6 +11,7 @@
   <a href="#section-one-anchor" id="section-one-button" class="header-button">Home</a>
   <a href="#section-two-anchor" id="section-two-button" class="header-button">Bears</a>
   <a href="#section-three-anchor" id="section-three-button" class="header-button">Adventures</a>
+  <!-- <a href="#section-four-anchor" id="section-four-button" class="header-button">Contact</a> -->
 </div>
 
 <body>
@@ -52,40 +54,70 @@
 
       
     </section>
-          <div id="bears-modal" class="modal">
+    <div id="bears-modal" class="modal">
 
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class="close">x</span>
-          <p>Some text in the Modal..</p>
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">x</span>
+        <div class="flex-container">
+          <div class="flex-item">
+            <img class="modal-image" src="media/badass.gif">
+          </div>
+          <div class="flex-item">
+            <p>The bears live in a cave close to the San Francisco Bay area and enjoy going out and exploring the world. </p>
+            <p>They met when they were children, living in a box looking to be adopted.</p>
+          </div>
         </div>
-
       </div>
+
+    </div>
 
     <section id="section-three">
       <a name="section-three-anchor" id="section-three-anchor"></a>
-      <h1>Adventures!</h1>
-      <div id="carousel">
-        <div id="buttons">
-          <a href="#" id="prev">prev</a>
-          <a href="#" id="next">next</a>
-          <div class="clear"></div>
-        </div>
+      <div class="center">
+        <h1 class="carousel-h1">Adventures!</h1>
+      </div>
+      <div class="carousel">
+       <!--  <div id="buttons">
+     </div> -->
+     <div class="slides flex-container"> 
+      <div class="flex-item"><span id="left-button" class="modal-button arrow"><</span></div>
+      <div class="flex-item-middle">
+        <div id="slide1" class="hideable">
+          <h1>DDR</h1>
+          <img class="slide-pic" src="media/adventures/ddr.gif">
 
-        <div class="clear"></div>
-        <div id="slides"> 
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <div class="clear"></div>
+          <h3>The bears like to dance! </h3>
+        </div>
+        <div id="slide2" class="hideable hidden">
+          <h1>Riding the Transit</h1>
+          <img class="slide-pic" src="media/adventures/bus.gif"> 
+          <h3>The bears ride the transit just like everyone else!</h3>
+        </div>
+        <div id="slide3" class="hideable hidden">
+          <h1>Bathroom!</h1>
+          <img class="slide-pic" src="media/adventures/bathroom.gif"> 
+          <h3>The bears practice oral hygiene every morning to keep the nice bright teeth!</h3>
         </div>
       </div>
-    </section>
+      <div class="flex-item"><span id="right-button" class="modal-button arrow">></span></div>
+    </div>
 
-    <script src="lib/jquery-2.1.3.min/index.js"></script>
-    <script src="js/script.js"></script>
-    <script src="http://localhost:35729/livereload.js"></script>
-  </body>
-  </html>
+  </div>
+</section>
+
+<section id="section-four">
+  <a name="section-four-anchor" id="section-four-anchor"></a>
+  <h2>Social</h2>
+  <div class="icons">
+    <a href="https://www.facebook.com/CNWeBareBears"><i class="fa fa-facebook-official social-button fa-2x"></i></a>
+    <a href="https://twitter.com/threebarebears"><i class="fa fa-twitter social-button fa-2x"></i></a>
+    <a href="https://www.instagram.com/webarebears.official/"><i class="fa fa-instagram social-button fa-2x"></i></a>
+  </div>
+</section>
+
+<script src="lib/jquery-2.1.3.min/index.js"></script>
+<script src="js/script.js"></script>
+<script src="http://localhost:35729/livereload.js"></script>
+</body>
+</html>

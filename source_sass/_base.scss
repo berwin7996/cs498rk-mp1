@@ -25,6 +25,11 @@ h2 {
   font-size: 1.6rem;
 }
 
+h3 {
+  @include h-center();
+  font-size: 1.3rem;
+}
+
 section {
   // height is the size of the viewport
   height: 100vh;
@@ -86,6 +91,50 @@ section {
     }
   }
 
+
+  .arrow {
+    font-size: 3em;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .carousel-h1 {
+    display: inline-block;
+  }
+
+  #buttons {
+    position: absolute;
+    display: inline-block;
+    @include horizontalcenter();
+  }
+
+  .slides {
+    // width: 80vh;
+    overflow-y: hidden;
+    .hideable {
+      // @include horizontalcenter-margin();
+      @include transition();
+      opacity: 1;
+      // transition: opacity 1s, height 0;
+
+      @include horizontalcenter-margin();
+      // width: 50vh;
+
+      img {
+        height: 50vh;
+        display: block;
+        margin: 10px auto;
+      }
+
+    }
+
+    .hidden {
+
+      opacity: 0;
+      transition: opacity 1s, height 0 1s;
+      height: 0;
+    }
+  }
 }
 
 #section-two {
@@ -100,6 +149,20 @@ section {
   background-attachment: fixed;
 }
 
+#section-four {
+  .icons {
+    @include horizontalcenter();
+    @include ignoreAnchorColors();
+    position: absolute;
+    color: $white;
+
+  }
+  h2 {
+    padding-top: 5px;
+  }
+  height: 80px;
+}
+
 
 /*
 *  flexbox for columns
@@ -110,10 +173,13 @@ section {
 }
 
 .flex-item {
-  text-align: center;
+  @include verticalcenter();
 
+  text-align: center;
+  
   flex: 0 1 auto;
   margin: 0 auto;
+  overflow-x: hidden;
 
   max-width: 30vh;
   // overflow: hidden;
@@ -124,9 +190,23 @@ section {
   }
 }
 
+.flex-item-middle {
+  text-align: center;
+
+  flex: 0 1 auto;
+  margin: 0 auto;
+  overflow-x: hidden;
+
+  max-width: 80vh;
+}
 
 
+
+/**
+* fixed header stuff
+*/
 .header-container {
+  @include transition();
   position: fixed;
   top: 0;
   background-color: darken($header-color, 10);
@@ -140,6 +220,7 @@ section {
   }
   
   .header-button {
+    @include transition();
 
     &.minimized{
       line-height: $header-height-mini;
@@ -171,17 +252,17 @@ section {
     overflow: auto;
 
 
-    // sexy-ass animation
-    -webkit-transition: line-height 0.8s;
-    -moz-transition: line-height 0.8s;
-    transition: line-height 0.8s;
+    // // sexy-ass animation
+    // -webkit-transition: line-height 0.8s;
+    // -moz-transition: line-height 0.8s;
+    // transition: line-height 0.8s;
 
 
   }
 
-  -webkit-transition: height 0.8s;
-  -moz-transition: height 0.8s;
-  transition: height 0.8s;
+  // -webkit-transition: height 0.8s;
+  // -moz-transition: height 0.8s;
+  // transition: height 0.8s;
 }
 
 video {
@@ -198,6 +279,7 @@ video {
 /* http://www.w3schools.com/howto/howto_css_modals.asp */
 /* The Modal (background) */
 .modal {
+  @include transition();
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   left: 0;
@@ -213,13 +295,15 @@ video {
 
 /* Modal Content/Box */
 .modal-content {
+  @include transition();
   background-color: #fefefe;
   border-radius: 20px;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 60%; /* Could be more or less, depending on screen size */
 }
+
 
 /* The Close Button */
 .close {
@@ -235,3 +319,8 @@ video {
   text-decoration: none;
   cursor: pointer;
 }
+
+.center {
+  text-align: center;
+}
+
